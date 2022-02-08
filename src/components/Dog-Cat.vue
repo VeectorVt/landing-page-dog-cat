@@ -33,38 +33,58 @@
       </div>
     </section>
 
+    <section class="terceiro">
+      <Cat />
+    </section>
+
     <footer class="footer-page"></footer>
   </div>
 </template>
 
 <script>
+import Cat from "./Cat";
+
 export default {
   name: "DogCat",
+  components: {
+    Cat,
+  },
 };
 </script>
 
 <style scoped>
 .principal {
+  background-image: url(../assets/dog-space.jpeg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
+
   align-items: center;
 }
 
 .inicial {
+  /* perspective: 10px; */
   display: flex;
   align-items: center;
   flex-direction: column;
   background-image: url(../assets/dog.jpeg);
-  background-size: contain;
-  /* background-size:80vw 100vh ; */
+  background-size: cover;
+  background-position: center right;
+  /* transform: scale(1 ,1 ); */
+  /* background-size:98vw 100vh ; */
+
   background-repeat: no-repeat;
   width: 71vw;
   height: 100vh;
 }
 
 .second {
+  overflow-x: hidden;
   background-color: #fff;
   width: 71vw;
   height: 100vh;
@@ -98,7 +118,8 @@ export default {
 }
 #box-3 {
   background-image: url(../assets/human-dog.jpeg);
-  background-size: 18vw 40vh;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 #box-4 {
@@ -106,7 +127,9 @@ export default {
 }
 #box-5 {
   background-image: url(../assets/pet-dog.jpeg);
-  background-size: 18vw 40vh;
+  background-size: cover;
+  background-position: center center;
+  
   background-repeat: no-repeat;
 }
 #box-6 {
@@ -114,6 +137,7 @@ export default {
 }
 
 #box-1 > h1 {
+  font-weight: 100;
   padding: 10px;
   color: #fff;
   text-align: start;
@@ -168,11 +192,13 @@ export default {
 }
 
 .title {
+  font-weight: 100;
   font-size: 40pt;
   font-family: "Playfair Display", serif;
 }
 
 .subtitle {
+  letter-spacing: 4px;
   font-family: "Roboto", sans-serif;
   margin-top: 15vh;
 }
