@@ -17,6 +17,7 @@ export default {
 
 <style scoped>
 .cat {
+  box-shadow: #000000 1px 2px 10px 1px;  
   display: flex;
   flex-direction: column;
   justify-content: left;

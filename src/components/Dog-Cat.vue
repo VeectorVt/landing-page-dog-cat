@@ -6,7 +6,7 @@
       <h1 class="title">Cat-Dog-Mimo</h1>
     </section>
 
-    <section class="second">
+    <section data-aos="fade-up" class="second">
       <div class="grid">
         <div id="box-1" class="grid-item">
           <h1>Limpe tudo em volta dos animais de estimação</h1>
@@ -37,26 +37,39 @@
       <Cat />
     </section>
 
+    <FourthPage />
+
+    <section class="last-page">
+      <LastPage />
+    </section>
+
     <footer class="footer-page"></footer>
   </div>
 </template>
 
-<script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script >
+AOS.init();
 import Cat from "./Cat";
+import FourthPage from "./FourthPage.vue";
+import LastPage from "./LastPage.vue";
 
 export default {
   name: "DogCat",
   components: {
     Cat,
+    FourthPage,
+    LastPage,
   },
 };
 </script>
 
 <style scoped>
 .principal {
-  background-image: url(../assets/dog-space.jpeg);
+  background-image: url(../assets/horizonte.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: 0vw 0vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
   display: flex;
@@ -68,13 +81,14 @@ export default {
 }
 
 .inicial {
+  box-shadow: #000000 1px 2px 10px 1px;
   /* perspective: 10px; */
   display: flex;
   align-items: center;
   flex-direction: column;
   background-image: url(../assets/dog.jpeg);
   background-size: cover;
-  background-position: center right;
+  background-position: 0vw 0vh;
   /* transform: scale(1 ,1 ); */
   /* background-size:98vw 100vh ; */
 
@@ -84,6 +98,7 @@ export default {
 }
 
 .second {
+  box-shadow: #000000 1px 2px 10px 1px;
   overflow-x: hidden;
   background-color: #fff;
   width: 71vw;
@@ -95,11 +110,13 @@ export default {
   justify-content: center;
   align-content: center;
   display: grid;
+
   grid-template-columns: 18vw 18vw 18vw;
   grid-template-rows: 35vh 35vh;
 }
 
 .grid-item {
+  box-shadow: #000 1px 2px 10px 1px;
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
@@ -112,28 +129,61 @@ export default {
   align-content: center;
   justify-content: space-around;
   flex-direction: column;
+  transition: 0.5s;
+}
+
+#box-1:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: none;
+  border-radius: 10px;
 }
 #box-2 {
   background-color: #ffffff;
+  transition: 0.5s;
 }
+#box-2:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: none;
+  border-radius: 10px;
+}
+
 #box-3 {
   background-image: url(../assets/human-dog.jpeg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  transition: 0.5s;
+}
+#box-3:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: none;
 }
 #box-4 {
   background-color: #ffffff;
+  transition: 0.5s;
+}
+#box-4:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: none;
 }
 #box-5 {
   background-image: url(../assets/pet-dog.jpeg);
   background-size: cover;
   background-position: center center;
-  
+  transition: 0.5s;
   background-repeat: no-repeat;
+}
+#box-5:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: none;
 }
 #box-6 {
   background-color: #fff;
+  transition: 0.5s;
+}
+#box-6:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: none;
 }
 
 #box-1 > h1 {
@@ -150,6 +200,10 @@ export default {
   border-radius: 15px;
   width: 20%;
   margin-left: 1vw;
+  transition: 0.5s;
+}
+#box-1 > img:hover {
+  transform: scaleX(0.5);
 }
 
 #box-2 > img {
