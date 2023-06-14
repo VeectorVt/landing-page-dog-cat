@@ -6,40 +6,17 @@
       <h1 class="title">Cat-Dog-Mimo</h1>
     </section>
 
-    <section data-aos="fade-up" class="second">
-      <div class="grid">
-        <div id="box-1" class="grid-item">
-          <h1>Limpe tudo em volta dos animais de estimação</h1>
-          <img src="../assets/seta.png" alt="" />
-        </div>
-        <div id="box-2" class="grid-item">
-          <img src="../assets/pet.png" alt="" />
-          <p>Lorem, ipsum dolor sit amet consectetur</p>
-        </div>
-
-        <div id="box-3" class="grid-item"></div>
-
-        <div id="box-4" class="grid-item">
-          <img src="../assets/dog.png" alt="" />
-          <p>Lorem, ipsum dolor sit amet consectetur</p>
-        </div>
-
-        <div id="box-5" class="grid-item"></div>
-
-        <div id="box-6" class="grid-item">
-          <img src="../assets/cat.png" alt="" />
-          <p>Lorem, ipsum dolor sit amet consectetur</p>
-        </div>
-      </div>
+    <section data-aos-delay="1020" data-aos="fade-left" class="second">
+      <SecondPage />
     </section>
 
-    <section class="terceiro">
+    <section data-aos-delay="1020" data-aos="fade-right" class="terceiro">
       <Cat />
     </section>
 
-    <FourthPage />
+    <FourthPage data-aos-delay="1020" data-aos="fade-up-left" />
 
-    <section class="last-page">
+    <section data-aos-delay="1020" data-aos="fade-down" class="last-page">
       <LastPage />
     </section>
 
@@ -47,13 +24,13 @@
   </div>
 </template>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
 <script >
-AOS.init();
 import Cat from "./Cat";
 import FourthPage from "./FourthPage.vue";
 import LastPage from "./LastPage.vue";
+import SecondPage from "./SecondPage.vue";
 
 export default {
   name: "DogCat",
@@ -61,6 +38,7 @@ export default {
     Cat,
     FourthPage,
     LastPage,
+    SecondPage
   },
 };
 </script>
@@ -105,133 +83,7 @@ export default {
   height: 100vh;
 }
 
-.grid {
-  height: 100vh;
-  justify-content: center;
-  align-content: center;
-  display: grid;
 
-  grid-template-columns: 18vw 18vw 18vw;
-  grid-template-rows: 35vh 35vh;
-}
-
-.grid-item {
-  box-shadow: #000 1px 2px 10px 1px;
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-
-#box-1 {
-  background-color: black;
-  display: flex;
-  align-content: center;
-  justify-content: space-around;
-  flex-direction: column;
-  transition: 0.5s;
-}
-
-#box-1:hover {
-  transform: scale(1.2, 1.2);
-  box-shadow: none;
-  border-radius: 10px;
-}
-#box-2 {
-  background-color: #ffffff;
-  transition: 0.5s;
-}
-#box-2:hover {
-  transform: scale(1.2, 1.2);
-  box-shadow: none;
-  border-radius: 10px;
-}
-
-#box-3 {
-  background-image: url(../assets/human-dog.jpeg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transition: 0.5s;
-}
-#box-3:hover {
-  transform: scale(1.2, 1.2);
-  box-shadow: none;
-}
-#box-4 {
-  background-color: #ffffff;
-  transition: 0.5s;
-}
-#box-4:hover {
-  transform: scale(1.2, 1.2);
-  box-shadow: none;
-}
-#box-5 {
-  background-image: url(../assets/pet-dog.jpeg);
-  background-size: cover;
-  background-position: center center;
-  transition: 0.5s;
-  background-repeat: no-repeat;
-}
-#box-5:hover {
-  transform: scale(1.2, 1.2);
-  box-shadow: none;
-}
-#box-6 {
-  background-color: #fff;
-  transition: 0.5s;
-}
-#box-6:hover {
-  transform: scale(1.2, 1.2);
-  box-shadow: none;
-}
-
-#box-1 > h1 {
-  font-weight: 100;
-  padding: 10px;
-  color: #fff;
-  text-align: start;
-  font-size: 15pt;
-  font-family: "Playfair Display", serif;
-}
-
-#box-1 > img {
-  background-color: #fff;
-  border-radius: 15px;
-  width: 20%;
-  margin-left: 1vw;
-  transition: 0.5s;
-}
-#box-1 > img:hover {
-  transform: scaleX(0.5);
-}
-
-#box-2 > img {
-  width: 20%;
-}
-
-#box-2 > p {
-  font-size: 16pt;
-  font-family: "roboto", serif;
-}
-
-#box-4 > img {
-  width: 20%;
-}
-
-#box-4 > p {
-  font-size: 16pt;
-  font-family: "roboto", serif;
-}
-
-#box-6 > img {
-  width: 20%;
-}
-
-#box-6 > p {
-  font-size: 16pt;
-  font-family: "roboto", serif;
-}
 
 .header-page {
   background-color: black;
